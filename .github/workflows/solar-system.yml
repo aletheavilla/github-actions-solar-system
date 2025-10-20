@@ -6,6 +6,11 @@ on:
     branches:
       - main
       - 'feature/*'
+env:
+  MONGO_URI: ${{ vars.MONGO_URI }}
+  MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
+  MONGO_PASSWORD: ${{ secret.MONGO_PASSWORD }}
+  
     
 jobs:
     unit-testing:
@@ -31,3 +36,4 @@ jobs:
           with:
             name: Mocha-Test-Result
             path: test-results.xml
+
